@@ -1,0 +1,17 @@
+3 of 3 runs pending
+done: dqn_lr1e-4_tu1000 seed 100
+done: dqn_lr1e-4_tu1000 seed 101
+done: dqn_lr1e-4_tu1000 seed 102
+12 of 12 runs pending
+done: tabular_b6_primary_alpha0.05 seed 100
+done: tabular_b10_primary_alpha0.05 seed 100
+done: tabular_b20_primary_alpha0.05 seed 100
+done: tabular_b10_tight_alpha0.05 seed 100
+done: tabular_b6_primary_alpha0.05 seed 101
+done: tabular_b10_primary_alpha0.05 seed 101
+done: tabular_b20_primary_alpha0.05 seed 101
+done: tabular_b10_tight_alpha0.05 seed 101
+done: tabular_b6_primary_alpha0.05 seed 102
+done: tabular_b10_primary_alpha0.05 seed 102
+done: tabular_b20_primary_alpha0.05 seed 102
+done: tabular_b10_tight_alpha0.05 seed 102

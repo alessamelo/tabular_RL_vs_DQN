@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------- Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ----------------------------------------------------------- Environments
+.venv/
+venv/
+env/
+.env
+.python-version
+
+# ------------------------------------------------------- Testing / tooling
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------- Jupyter
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------- Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------- Experiments
+# The reported results (logs, figures, summary CSVs, small models) ARE committed:
+# the README cites them and they let anyone check the numbers without re-running.
+# Only scratch output and console logs are ignored.
+results/demo/                 # optional demo run from notebook 01
+results/smoke*/               # quick smoke tests
+results/*.log                 # console output of run_all (tuning_run.log, main_run.log, ...)
+nohup.out
+
+# If the repository gets too large, uncomment to stop tracking trained models
+# (they can be regenerated with `python -m scripts.run_all`):
+# results/**/models/

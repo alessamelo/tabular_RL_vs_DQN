@@ -1,0 +1,41 @@
+# Experimental configuration: Tabular Q-Learning vs DQN on CartPole-v1.
+# All hyperparameters are frozen before the reported seeds (0-4) are run.
+
+training:
+  env_id: CartPole-v1
+  total_steps: 200000        # identical environment-step budget for every agent
+  eval_every: 5000           # 41 checkpoints including step 0
+  eval_episodes: 10          # greedy (epsilon = 0) episodes per checkpoint
+  final_eval_episodes: 100   # greedy episodes on the final policy
+  stats_every: 1000
+
+seeds: [0, 1, 2, 3, 4]         # reported seeds
+tuning_seeds: [100, 101, 102]  # used only for sanity checks / tuning, never reported as results
+
+gamma: 0.99
+
+tabular:
+  learning_rate: 0.1             # kept after comparison with 0.05 on tuning seeds
+  initial_q: 0.0
+  epsilon: {start: 1.0, end: 0.05, duration: 100000}
+  bins: [6, 10, 20]
+  ranges:
+    # [x, x_dot, theta, theta_dot]; see README section 1 for the justification
+    primary:
+      low:  [-2.4, -2.0, -0.2095, -3.0]
+      high: [ 2.4,  2.0,  0.2095,  3.0]
+    tight:
+      low:  [-2.4, -1.0, -0.2095, -1.5]
+      high: [ 2.4,  1.0,  0.2095,  1.5]
+  range_ablation_bins: 10
+
+dqn:
+  hidden_sizes: [128, 128]
+  learning_rate: 0.0001          # chosen on tuning seeds (see results/tuning/TUNING.md)
+  buffer_size: 50000
+  batch_size: 64
+  learning_starts: 1000
+  train_frequency: 1
+  target_update_interval: 1000  # in gradient steps; chosen on tuning seeds
+  max_grad_norm: 10.0
+  epsilon: {start: 1.0, end: 0.05, duration: 20000}

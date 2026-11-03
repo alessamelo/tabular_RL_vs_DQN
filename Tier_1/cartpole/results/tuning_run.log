@@ -1,0 +1,16 @@
+15 of 15 runs pending
+done: tabular_b6_primary seed 100
+done: tabular_b10_primary seed 100
+done: tabular_b20_primary seed 100
+done: tabular_b10_tight seed 100
+done: dqn seed 100
+done: tabular_b6_primary seed 101
+done: tabular_b10_primary seed 101
+done: tabular_b20_primary seed 101
+done: tabular_b10_tight seed 101
+done: dqn seed 101
+done: tabular_b6_primary seed 102
+done: tabular_b10_primary seed 102
+done: tabular_b20_primary seed 102
+done: tabular_b10_tight seed 102
+done: dqn seed 102
