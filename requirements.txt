@@ -1,13 +1,21 @@
-# Core dependencies
-gymnasium[classic-control]==1.2.3
-gymnasium[box2d]==1.2.3
+# Python 3.11 (runs were made with Python 3.11.9 on Windows 11, CPU only)
+# Versions below are the ones used for the reported runs.
+# Tier 1 was run with gymnasium 1.2.2 (see Tier_1_Cartpole/requirements.txt), Tiers 2 and 3 with 1.2.3.
+# On Windows, Box2D needs SWIG to build: run `pip install swig` before installing this file.
+
+# Environments (CartPole needs classic-control, LunarLander needs box2d)
+gymnasium[classic-control,box2d]==1.2.3
+pygame==2.6.1
+
+# Agents, plots and GIFs
 numpy==2.2.6
 torch==2.10.0
 matplotlib==3.10.8
-pandas==2.3.3
-pyyaml==6.0.3
+pillow==13.0.0
 
-# Development and notebooks
-pytest
+# Parallel runs in Tiers 2 and 3 (return_as="generator_unordered" needs joblib >= 1.4)
+joblib>=1.4
+
+# Running the notebooks
 jupyter
-joblib
+ipython==9.18.1
